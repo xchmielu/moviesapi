@@ -51,4 +51,4 @@ $ npm test
 ```
 
 ## Live
-The live version of project: `https:// ...`
+The live version of project: `https://ngmovieapi.herokuapp.com`
