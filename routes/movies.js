@@ -16,11 +16,18 @@ router.get('/', async (req, res) => {
 	}
 });
 
+router.get('/:title', async (req, res) => {
+	const title = req.params.title.toLowerCase();
+	await Movie.find({ title: title }, (err, movie) => {
+		res.status(201).json(movie);
+	});
+});
+
 router.post('/', (req, res) => {
 	const movieRequest = req.body.movie || '';
 
 	axios.get(`http://www.omdbapi.com/?t=${movieRequest}&apikey=${process.env.APIKEY}`).then(data => {
-		const title = data.data.Title;
+		const title = data.data.Title.toLowerCase();
 		const year = data.data.Year;
 		const runtime = data.data.Runtime;
 

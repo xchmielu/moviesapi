@@ -12,13 +12,20 @@ router.get('/', async (req, res) => {
 	}
 });
 
+router.get('/:movie', async (req, res) => {
+	const movieTitle = req.params.movie.toLowerCase();
+	await Comment.find({ movie: movieTitle }, (err, movie) => {
+		res.status(201).json(movie);
+	});
+});
+
 router.post('/', (req, res) => {
 	const commentRequest = req.body.comment || '';
 	const movieRequest = req.body.movie || '';
 
 	const comment = new Comment({
 		content: commentRequest,
-		movie: movieRequest,
+		movie: movieRequest.toLowerCase(),
 	});
 
 	Movie.findOne({ title: movieRequest.toString() }, (err, movie) => {

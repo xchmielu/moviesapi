@@ -16,6 +16,9 @@ Route created for checking if everything is UP, cuz of deployment at heroku
     movie: <movie-title>
 }
 ```
+### movies/:title
+> GET to check movies with given (:title) name
+
 ### /comments
 > GET to check all existing comments in the database
 
@@ -27,6 +30,9 @@ Route created for checking if everything is UP, cuz of deployment at heroku
 }
 
 ```
+### /comments/:movie
+>GET to check comments posted to given (:movie) movie
+
 ## How to use
 
 ### Docker
