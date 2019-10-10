@@ -23,29 +23,32 @@ Route created for checking if everything is UP, cuz of deployment at heroku
 ```
 {
     comment: <comment-content>
-    movie: <movie-title>
+    movie: <movie-title>        // movie need to exists in database
 }
+
 ```
 ## How to use
 
 ### Docker
 ```
-git clone https://github.com/xchmielu/moviesapi.git
-moviesapi
-docker build -t moviesapi . 
-docker run -p <free-port>:3000  moviesapi
+$ git clone https://github.com/xchmielu/moviesapi.git
+$ cd moviesapi
+$ docker build -t moviesapi . 
+$ docker run -p <free-port>:3000  moviesapi
 ```
 
 ### Local
 ```
-git clone https://github.com/xchmielu/moviesapi.git 
-cd moviesapi
-npm install 
+$ git clone https://github.com/xchmielu/moviesapi.git 
+$ cd moviesapi
+$ npm install 
 ```
 
 ## Tests
 To run test use:
-`npm test`
+```
+$ npm test
+```
 
 ## Live
 The live version of project: `https:// ...`
