@@ -16,7 +16,7 @@ Route created for checking if everything is UP, cuz of deployment at heroku
     movie: <movie-title>
 }
 ```
-### movies/:title
+### /movies/:title
 > GET to check movies with given (:title) name
 
 ### /comments
