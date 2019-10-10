@@ -9,7 +9,7 @@ const indexRouter = require('./routes/index');
 const moviesRouter = require('./routes/movies');
 const commentsRouter = require('./routes/comments');
 
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
