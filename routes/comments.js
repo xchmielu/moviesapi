@@ -13,10 +13,14 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:movie', async (req, res) => {
-	const movieTitle = req.params.movie.toLowerCase();
-	await Comment.find({ movie: movieTitle }, (err, movie) => {
-		res.status(201).json(movie);
-	});
+	try {
+		const movieTitle = req.params.movie.toLowerCase();
+		await Comment.find({ movie: movieTitle }, (err, movie) => {
+			res.status(201).json(movie);
+		});
+	} catch (error) {
+		res.status(500).json(error);
+	}
 });
 
 router.post('/', (req, res) => {
