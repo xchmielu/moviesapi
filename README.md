@@ -8,6 +8,7 @@ Route created for checking if everything is UP, cuz of deployment at heroku
 
 ### /movies
 > GET to check all existing movies in the database
+
 > POST to insert the movie to the database, post data should look like this:
 
 ```
@@ -17,6 +18,7 @@ Route created for checking if everything is UP, cuz of deployment at heroku
 ```
 ### /comments
 > GET to check all existing comments in the database
+
 > POST to insert the movie to the database, post data should look like this:
 ```
 {
@@ -29,7 +31,7 @@ Route created for checking if everything is UP, cuz of deployment at heroku
 ### Docker
 ```
 git clone https://github.com/xchmielu/moviesapi.git
-moviesapi &&
+moviesapi
 docker build -t moviesapi . 
 docker run -p <free-port>:3000  moviesapi
 ```
